@@ -1,0 +1,20 @@
+def find_excellent_digit(T, K):
+    # Create the string H by concatenating T and K times
+    H = str(T) * K
+
+    # Function to find the excellent digit of a number
+    def excellent_digit(num):
+        while len(num) > 1:
+            num = str(sum(int(digit) for digit in num))
+        return int(num)
+
+    # Find the excellent digit of H
+    result = excellent_digit(H)
+    
+    return result
+
+# Example usage
+T = 12
+K = 3
+excellent_digit_result = find_excellent_digit(T, K)
+print(f"The excellent digit of H is: {excellent_digit_result}")
